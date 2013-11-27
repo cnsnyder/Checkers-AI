@@ -1,7 +1,7 @@
 (defun move (piece theBoard)
   (if (piece-p piece)
       (progn
-          (setf (piece-movelist piece) ())
+          (setf (piece-movelist piece) ()) ;;reset move list for given piece
         (mover piece theBoard ())
         )
     (print "NonPiece passed to move function")

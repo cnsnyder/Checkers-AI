@@ -1,4 +1,4 @@
-;; -*- lisp-version: "9.0 [Windows] (Nov 26, 2013 16:04)"; cg: "9.0"; -*-
+;; -*- lisp-version: "9.0 [Windows] (Sep 7, 2012 15:37)"; cg: "9.0"; -*-
 
 (in-package :cg-user)
 
@@ -10,7 +10,8 @@
                  (make-instance 'module :name "the mover")
                  (make-instance 'module :name "testcase1")
                  (make-instance 'module :name "updateBoard")
-                 (make-instance 'module :name "new mover"))
+                 (make-instance 'module :name "new mover")
+                 (make-instance 'module :name "test cases for move"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")
