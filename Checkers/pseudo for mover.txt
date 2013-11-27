@@ -1,0 +1,29 @@
+if king check four corners 
+
+if spot is nil then add 0 to valid next moves
+
+if spot is nonnil then 
+check if not on your team then
+check if next spot on same vector is nil 
+if it is then its a jump and should write 1 for jump in the valid moves list
+
+if neither |-> add nil 
+
+
+
+
+if the movelist is length 1 and valid next moves is all nil then any of
+those moves are valid
+
+if the movelist is length greater than 1 any moves that are nil are invalid 
+and are removed from the valid move list
+
+anything that is left is a jump or the list is empty and its time to return
+
+
+if no valid next moves then append current to movelist and movelist
+to piece-movelist and return 0
+
+if there are valid next moves then append current location to movelist and 
+call move (piece (modified location) board movelist) for each valid move 
+

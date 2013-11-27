@@ -3,10 +3,16 @@
 (in-package :cg-user)
 
 (define-project :name :|Checkers|
-  :modules (list (make-instance 'module :name "main"))
+  :modules (list (make-instance 'module :name "main")
+                 (make-instance 'module :name "new main")
+                 (make-instance 'module :name "initializeBoard")
+                 (make-instance 'module :name "mover gaben")
+                 (make-instance 'module :name "the mover")
+                 (make-instance 'module :name "testcase1")
+                 (make-instance 'module :name "updateBoard"))
   :projects nil
   :libraries nil
-  :editable-files nil
+  :editable-files (list "pseudo for mover.txt")
   :distributed-files nil
   :internally-loaded-files nil
   :project-package-name :common-graphics-user
