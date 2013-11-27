@@ -9,7 +9,8 @@
                  (make-instance 'module :name "mover gaben")
                  (make-instance 'module :name "the mover")
                  (make-instance 'module :name "testcase1")
-                 (make-instance 'module :name "updateBoard"))
+                 (make-instance 'module :name "updateBoard")
+                 (make-instance 'module :name "new mover"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")
