@@ -11,7 +11,11 @@
                  (make-instance 'module :name "testcase1")
                  (make-instance 'module :name "updateBoard")
                  (make-instance 'module :name "new mover")
-                 (make-instance 'module :name "test cases for move"))
+                 (make-instance 'module :name "test cases for move")
+                 (make-instance 'module :name "displayBoard")
+                 (make-instance 'module :name "new piece class")
+                 (make-instance 'module :name "Changes notes")
+                 (make-instance 'module :name "move testcases"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")

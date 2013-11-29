@@ -11,7 +11,7 @@
                   (if (> r 3)
                       (setq owner 1)
                     )
-                    (setq row (append row (list (make-piece :owner owner :location (list r c)))))
+                    (setq row (append row (list (make-instance 'piece :owner owner :location (list r c)))))
                   )
                   )
               (setq row (append row (list nil)))
