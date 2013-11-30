@@ -1,0 +1,15 @@
+(defmethod lol ((thePiece piece))
+  (if (> 0 (slot-value thePiece 'owner))
+      (slot-value thePiece 'owner)
+    (progn
+      (decf (slot-value thePiece 'owner))
+      (print "calling self")
+      (lol thePiece)
+      (print "return from call to self")
+      )
+    )
+  )
+
+(defun haha ()
+  (setf () () ())
+  )
