@@ -79,12 +79,15 @@
                             (if (not (eq 'piece (type-of (nth c (nth r theBoard)))))
                                 (progn 
                                   (let ((myBoard theBoard) (myMovelist theMovelist) (originalLocation (slot-value thePiece 'location)))
-                                        (setf jumpCounter (+ jumpCounter 1))
-                                        (setf myMovelist (append myMovelist (list (list r c))))
-                                        (updateBoard thePiece myBoard myMovelist)
+                                    (setf jumpCounter (+ jumpCounter 1))
+                                    (setf theMovelist (append theMovelist (list (list r c))))
+                                    (updateBoard thePiece theBoard theMovelist)
                                     (print "found jump calling self")
-                                        (genMoveListR thePiece myBoard myMovelist)
-                                        (print "coming back from call to self")
+                                    (genMoveListR thePiece theBoard theMovelist)
+                                    (print "coming back from call to self")
+                                    (setf (nth (nth 1 (slot-value item 'location)) (nth (nth 0 (slot-value item 'location)) theboard)) item)
+                                    (setf (nth c (nth r theboard)) nil)
+                                    (setf (nth (nth 1 originallocation) (nth (nth 0 originallocation) theBoard)) thePiece)
                                     (setf (slot-value thePiece 'location) originalLocation)
                                     (
                                   )
@@ -109,7 +112,6 @@
           (let ((tempList ()))
             (if (eq nil (nth x validlist))
                 (progn
-                  
                   (if (= x 0)
                       (progn
                         (print (list (- (nth 0 (slot-value thePiece 'location)) 1) (- (nth 1 (slot-value thePiece 'location)) 1)))
