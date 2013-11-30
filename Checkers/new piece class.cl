@@ -82,12 +82,12 @@
                     (if (not (eq (slot-value item 'owner) (slot-value thePiece 'owner))) ;;If diff teams
                         ;; (where you are going - where you are) + where you are going
                         (progn
-                          (let ((r (+ (- (nth 0 (piece-location item)) (nth 0 (slot-value thePiece 'location))) (nth 0 (piece-location item))))
-                                (c (+ (- (nth 1 (piece-location item)) (nth 1 (slot-value thePiece 'location))) (nth 1 (piece-location item)))))
+                          (let ((r (+ (- (nth 0 (slot-value item 'location)) (nth 0 (slot-value thePiece 'location))) (nth 0 (slot-value item 'location))))
+                                (c (+ (- (nth 1 (slot-value item 'location)) (nth 1 (slot-value thePiece 'location))) (nth 1 (slot-value item 'location)))))
                             (if (and (>= r 0) (<= r 7) (>= c 0) (<= c 7)) ;;if inside bounds
                             (if (not (eq 'piece (type-of (nth c (nth r theBoard)))))
                                 (progn 
-                                  (let ((myBoard theBoard) (myMovelist theMovelist) (orginalLocation (slot-value thePiece 'location))
+                                  (let ((myBoard theBoard) (myMovelist theMovelist) (orginalLocation (slot-value thePiece 'location)))
                                         (setf jumpCounter (+ jumpCounter 1))
                                         (setf myMovelist (append myMovelist (list (slot-value thePiece 'location))))
                                         (updateBoard thePiece myBoard myMovelist)
@@ -95,7 +95,6 @@
                                         (genMoveListR thePiece myBoard myMovelist)
                                         (print "coming back from call to self")
                                         (setf (slot-value thePiece 'location) originalLocation)
-                                    )
                                   )
                               )
                               )
