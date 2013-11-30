@@ -1,12 +1,3 @@
-(defstruct piece
-  owner
-  location
-  canJump
-  isKing
-  moveList
-  (isOnBoard t))
-  
-
 (defclass piece ()
   (
    (owner :initarg :owner :initform -1)
@@ -17,7 +8,7 @@
    )
   )
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;tooooo doooooooooooooo reverse the changes made in the recursive calls
 (defmethod genMoveListR ((thePiece piece) theBoard theMovelist)
   (let ((hasJumped nil) (validlist '(nil nil nil nil)) (jumpCounter 0))
     (print validlist)
@@ -87,21 +78,27 @@
                             (if (and (>= r 0) (<= r 7) (>= c 0) (<= c 7)) ;;if inside bounds
                             (if (not (eq 'piece (type-of (nth c (nth r theBoard)))))
                                 (progn 
-                                  (let ((myBoard theBoard) (myMovelist theMovelist) (orginalLocation (slot-value thePiece 'location)))
-                                        (setf jumpCounter (+ jumpCounter 1))
-                                        (setf myMovelist (append myMovelist (list (slot-value thePiece 'location))))
-                                        (updateBoard thePiece myBoard myMovelist)
-                                        (print "found jump calling self")
-                                        (genMoveListR thePiece myBoard myMovelist)
-                                        (print "coming back from call to self")
-                                        (setf (slot-value thePiece 'location) originalLocation)
+                                  (let ((myBoard theBoard) (myMovelist theMovelist) (originalLocation (slot-value thePiece 'location)))
+                                    (setf jumpCounter (+ jumpCounter 1))
+                                    (setf theMovelist (append theMovelist (list (list r c))))
+                                    (updateBoard thePiece theBoard theMovelist)
+                                    (print "found jump calling self")
+                                    (genMoveListR thePiece theBoard theMovelist)
+                                    (print "coming back from call to self")
+                                    (setf (nth (nth 1 (slot-value item 'location)) (nth (nth 0 (slot-value item 'location)) theboard)) item)
+                                    (setf (nth c (nth r theboard)) nil)
+                                    (setf (nth (nth 1 originallocation) (nth (nth 0 originallocation) theBoard)) thePiece)
+                                    (setf (slot-value thePiece 'location) originalLocation)
+                                    (
                                   )
                               )
                               )
                             (setf (nth x validlist) 0)
-                            )
+                              )
+                            
                           )
-                      )
+                          )
+                      (setf (nth x validlist) 0)
                   )
                   )
                   )
@@ -115,7 +112,6 @@
           (let ((tempList ()))
             (if (eq nil (nth x validlist))
                 (progn
-                  
                   (if (= x 0)
                       (progn
                         (print (list (- (nth 0 (slot-value thePiece 'location)) 1) (- (nth 1 (slot-value thePiece 'location)) 1)))
@@ -140,12 +136,13 @@
       (if (and (= jumpCounter 0) hasJumped)
           (progn
             (print "updating piece master move list with new jumps")
-            (setf theMovelist (append theMovelist (slot-value thePiece 'location)))
-            (setf (slot-value thePiece 'movelist) (append (slot-value thePiece 'movelist) theMovelist))
+            ;;(setf theMovelist (append theMovelist (slot-value thePiece 'location)))
+            (setf (slot-value thePiece 'movelist) (append (slot-value thePiece 'movelist) (list theMovelist)))
             )
         )
       )
     (print validlist)
+    )
     )
   )
           
