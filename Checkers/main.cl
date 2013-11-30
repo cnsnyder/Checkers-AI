@@ -11,7 +11,7 @@
         (setq movelist (append movelist move))
         
 
-(defun setUpBoard()
+(defun setUpBoard(;;Movelist)
   
   (print "Legend");
   (print "0 = Empty Space");

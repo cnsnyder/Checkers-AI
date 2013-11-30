@@ -1,14 +1,14 @@
-(defun playerDecision (theBoard)
+(defun playerDecision ()
   
-  (displayBoard theBoard)
+  (displayBoard)
   (let ((validPiece ()) (validMove ()) (row ()) (col ()) (piece ()) (mymovelist ()))
     (loop while (not (eql validPiece t)) do
           (print "Enter the row and column of the piece you would like to move ")
           (setf row  (read))
           (setf col  (read))
-          (if (not (eq (nth col (nth row theBoard)) nil)) ;;if there is a piece at that location
+          (if (not (eq (nth col (nth row *theBoard*)) nil)) ;;if there is a piece at that location
               (progn
-                (setf piece (nth col (nth row theBoard)))
+                (setf piece (nth col (nth row *theBoard*)))
                 (if (= (slot-value piece 'owner) 1) ;;player is player 1, AI is 0 
                     (progn 
                       (if (not (every #'null (slot-value piece 'movelist)))
