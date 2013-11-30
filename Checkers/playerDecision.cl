@@ -13,22 +13,22 @@
                     (progn 
                       (if (not (every #'null (slot-value piece 'movelist)))
                           (progn
-                      (setf mymovelist (append mymovelist (list row col)))
-                      (setf validPiece t)
+                            (setf mymovelist (append mymovelist (list row col)))
+                            (setf validPiece t)
                             )
                         
-                      (print "That piece has no moves")
+                        (print "That piece has no moves")
+                        )
                       )
-                  )
                   (print "That is not your piece. Choose again") ;;else choice is invalid, loop will  restart
                   
+                  )
                 )
-            )
             (print "There is no piece there. Choose again") ;;else choice is invalid, loop will restart
             
             )
           ) ;;end while loop
-    ;;TODO: validate if piece has moves in upper loop
+    
     (loop while (not (eql validMove t)) do 
           (print "Enter the row and column of where you would like to move the piece")
           (setf row (list (read)))
