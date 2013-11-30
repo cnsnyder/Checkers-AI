@@ -1,12 +1,3 @@
-(defstruct piece
-  owner
-  location
-  canJump
-  isKing
-  moveList
-  (isOnBoard t))
-  
-
 (defclass piece ()
   (
    (owner :initarg :owner :initform -1)
@@ -17,7 +8,7 @@
    )
   )
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;tooooo doooooooooooooo reverse the changes made in the recursive calls
 (defmethod genMoveListR ((thePiece piece) theBoard theMovelist)
   (let ((hasJumped nil) (validlist '(nil nil nil nil)) (jumpCounter 0))
     (print validlist)
@@ -87,21 +78,24 @@
                             (if (and (>= r 0) (<= r 7) (>= c 0) (<= c 7)) ;;if inside bounds
                             (if (not (eq 'piece (type-of (nth c (nth r theBoard)))))
                                 (progn 
-                                  (let ((myBoard theBoard) (myMovelist theMovelist) (orginalLocation (slot-value thePiece 'location)))
+                                  (let ((myBoard theBoard) (myMovelist theMovelist) (originalLocation (slot-value thePiece 'location)))
                                         (setf jumpCounter (+ jumpCounter 1))
-                                        (setf myMovelist (append myMovelist (list (slot-value thePiece 'location))))
+                                        (setf myMovelist (append myMovelist (list (list r c))))
                                         (updateBoard thePiece myBoard myMovelist)
-                                        (print "found jump calling self")
+                                    (print "found jump calling self")
                                         (genMoveListR thePiece myBoard myMovelist)
                                         (print "coming back from call to self")
-                                        (setf (slot-value thePiece 'location) originalLocation)
+                                    (setf (slot-value thePiece 'location) originalLocation)
+                                    (
                                   )
                               )
                               )
                             (setf (nth x validlist) 0)
-                            )
+                              )
+                            
                           )
-                      )
+                          )
+                      (setf (nth x validlist) 0)
                   )
                   )
                   )
@@ -140,12 +134,13 @@
       (if (and (= jumpCounter 0) hasJumped)
           (progn
             (print "updating piece master move list with new jumps")
-            (setf theMovelist (append theMovelist (slot-value thePiece 'location)))
-            (setf (slot-value thePiece 'movelist) (append (slot-value thePiece 'movelist) theMovelist))
+            ;;(setf theMovelist (append theMovelist (slot-value thePiece 'location)))
+            (setf (slot-value thePiece 'movelist) (append (slot-value thePiece 'movelist) (list theMovelist)))
             )
         )
       )
     (print validlist)
+    )
     )
   )
           

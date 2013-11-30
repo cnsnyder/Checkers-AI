@@ -19,5 +19,5 @@
 (setq movelist (append movelist (list '(5 2))))
 (setq movelist (append movelist (list '(4 3))))
 (updateboard (nth 2 (nth 5 theboard)) theboard movelist)
-(genMoveListR (nth 4 (nth 3 theboard)) theboard ())
+(genMoveListR (nth 4 (nth 3 theboard)) theboard (list (slot-value (nth 4 (nth 3 theboard)) 'location)))
 (slot-value (nth 4 (nth 3 theboard)) 'movelist)
