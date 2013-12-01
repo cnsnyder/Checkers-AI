@@ -1,10 +1,9 @@
 (defun aiDecision (theBoard level)  ;;;top level function that returns the movelist chosen by the AI 
   ;;the board is the current state of the board
   ;;level is how many turns to simulate
-  ;;; return
   (setf utilitylist ())
   (let ((myBoard (copy-list theBoard)))
-    (setf aiMovelist (max myBoard level))
+    (setf aiMovelist (aimax myBoard level))
     (setf random-state (make-random-state t))
     (setf x (random (length aiMovelist)))
     (setf result (nth x aiMovelist)) ;;return
@@ -56,9 +55,9 @@
                           )
                         )
                       (dotimes (x (length (slot-value p 'movelist)))
-                        (if (= (length (nth x (slot-value p 'movelist))) longestMove)
+                        ;;(if (= (length (nth x (slot-value p 'movelist))) longestMove)
                             (setf listofmoves (append listofmoves (nth x (slot-value p 'movelist))))
-                          )
+                          ;;)
                         )
                       (let ((listofjumps ()))
                         (dotimes (x (length listofmoves))
@@ -151,9 +150,9 @@
                           )
                         )
                       (dotimes (x (length (slot-value p 'movelist)))
-                        (if (= (length (nth x (slot-value p 'movelist))) longestMove)
+                        ;;(if (= (length (nth x (slot-value p 'movelist))) longestMove)
                             (setf listofmoves (append listofmoves (nth x (slot-value p 'movelist))))
-                          )
+                         ;; )
                         )
                       (let ((listofjumps ()))
                         (dotimes (x (length listofmoves))
