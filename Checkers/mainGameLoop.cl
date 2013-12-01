@@ -69,11 +69,6 @@
     
       )
   )
-
-(defun gameOver()
-  (print "The game is over, Player 1 has won!")
-  (print "The game is over, Player 2 has won!")
-  )
   
   
   
