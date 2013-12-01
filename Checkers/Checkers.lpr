@@ -17,7 +17,10 @@
                  (make-instance 'module :name "Changes notes")
                  (make-instance 'module :name "move testcases")
                  (make-instance 'module :name "setupgame")
-                 (make-instance 'module :name "hahahahah"))
+                 (make-instance 'module :name "hahahahah")
+                 (make-instance 'module :name "Ai current")
+                 (make-instance 'module :name "Ai testcases")
+                 (make-instance 'module :name "updateAllPieces"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")
