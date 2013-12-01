@@ -3,21 +3,26 @@
 
 (setf movelist ())
 (setf movelist (append movelist (list '(2 3))))
-(setf movelist (append movelist (list '(3 2))))
-(updateBoard (nth (nth 1 (nth 0 m)) (nth (nth 0 (nth 0 m)) *theBoard*)) *theBoard* movelist)
+(setf movelist (append movelist (list '(3 4))))
+(updateBoard (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)) *theBoard* movelist)
+(updateAllPieces)
 (displayboard)
 
 (setf movelist (playerdecision))
-(updateBoard (nth (nth 1 (nth 0 m)) (nth (nth 0 (nth 0 m)) *theBoard*)) *theBoard* movelist)
+(updateBoard (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)) *theBoard* movelist)
+(updateAllPieces)
+(displayboard)
 
 (setq movelist ()) 
 (setq movelist (append movelist (list '(1 2))))
 (setq movelist (append movelist (list '(3 4))))
-(updateBoard (nth (nth 1 (nth 0 m)) (nth (nth 0 (nth 0 m)) *theBoard*)) *theBoard* movelist)
-(displayboard) 
+(updateBoard (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)) *theBoard* movelist)
+(updateAllPieces)
+(displayboard)
 
 (setf movelist (playerdecision))
-(updateBoard (nth (nth 1 (nth 0 m)) (nth (nth 0 (nth 0 m)) *theBoard*)) *theBoard* movelist)
+(updateBoard (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)) *theBoard* movelist)
 
 
-(nth (nth 1 (nth 0 m)) (nth (nth 0 (nth 0 m)) *theBoard*)) ;;to access piece to send to board
+;;SANDBOX
+(nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)) ;;to access piece to send to board

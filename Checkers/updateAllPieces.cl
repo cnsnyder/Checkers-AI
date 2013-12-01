@@ -1,4 +1,4 @@
-(defun updateAllPieces ()
+(defun updateAllPieces () ;;Generates a move list for all pieces on board
   (dotimes (r 8)
     (dotimes (c 8)
       (let ((p (nth c (nth r *theBoard*))))
