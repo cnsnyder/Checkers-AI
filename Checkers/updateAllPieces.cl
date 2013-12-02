@@ -1,4 +1,3 @@
-
 (defun updateAllPieces (theBoard)
  ;;Generates a move list for all pieces on board
   (dotimes (r 8)
