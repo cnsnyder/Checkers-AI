@@ -1,4 +1,4 @@
-(defun playerDecision (*theBoard*)
+(defun playerDecisionPVP(*theBoard* currentPlayer)
   
   (displayBoard *theBoard*)
   (let ((validPiece ()) (validMove ()) (row ()) (col ()) (piece ()) (mymovelist ()))
@@ -11,7 +11,7 @@
           (if (not (eq (nth col (nth row *theBoard*)) nil)) ;;if there is a piece at that location
               (progn
                 (setf piece (nth col (nth row *theBoard*)))
-                (if (= (slot-value piece 'owner) 1) ;;player is player 1, AI is 0 
+                (if (= (slot-value piece 'owner) currentPlayer) ;;player1 is 0, player2 is 1 
                     (progn 
                       (if (not (every #'null (slot-value piece 'movelist)))
                           (progn
@@ -92,23 +92,7 @@
 
             )
       )
-     (setf mymovelist mymovelist) ;; return move list
+    (setf mymovelist mymovelist) ;; return move list
     )
   
- 
   )
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  ;; SANDBOX
-  ;; (nth killCol (nth killRow theBoard)) nil) 
-  ;; (slot-value thePiece 'owner)
-  ;;Psuedo code

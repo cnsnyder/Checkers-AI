@@ -48,7 +48,7 @@
             (progn
               (setf validInputMode t)
               (print "You have selected Player vs. Player")
-              ;;call PVP                          
+              (playerVsPlayerMode)                         
               ))
         (if (= choice 3)
             

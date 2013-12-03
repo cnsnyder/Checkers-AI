@@ -11,7 +11,7 @@
     (if (= x 0)
         (progn
           (print "Player 1 goes first!")
-          (setf movelist (playerDecision)) 
+          (setf movelist (playerDecision *theBoard*)) 
           ;;grab piece from first location in movelist since playerDecision does not return it
           (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
           (UpdateBoard piece *theBoard* movelist) ;Update the board to get it ready for next player turn
@@ -48,7 +48,7 @@
                  (print "It is now the player's turn")
                  (setf aiJustWent nil)
                  (setf playerJustWent t)
-                 (setf movelist (playerDecision))
+                 (setf movelist (playerDecision *theBoard*))
                ;;grab piece from first location in movelist since playerDecision does not return it
                  (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
                  (updateBoard piece *theBoard* movelist)  
