@@ -1,4 +1,4 @@
-(defun updateBoard (piece theBoard movelist)
+(defun updateBoard! (piece theBoard movelist)
   (dotimes (x (- (length movelist) 1))
     (setf (slot-value piece 'location) (nth (+ x 1) movelist)) ;;sets the piece location to the next location in the move list
     (setf (nth (nth 1 (slot-value piece 'location)) (nth (nth 0 (slot-value piece 'location)) theBoard)) piece) ;;sets the board item at the next move list location to the piece that was just "moved" there
