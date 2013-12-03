@@ -1,10 +1,9 @@
-;; -*- lisp-version: "9.0 [Windows] (Sep 7, 2012 15:37)"; cg: "9.0"; -*-
+;; -*- lisp-version: "9.0 [Windows] (Dec 2, 2013 21:58)"; cg: "9.0"; -*-
 
 (in-package :cg-user)
 
 (define-project :name :|Checkers|
   :modules (list (make-instance 'module :name "main")
-                 (make-instance 'module :name "new main")
                  (make-instance 'module :name "initializeBoard")
                  (make-instance 'module :name "mover gaben")
                  (make-instance 'module :name "the mover")
@@ -20,7 +19,8 @@
                  (make-instance 'module :name "hahahahah")
                  (make-instance 'module :name "Ai current")
                  (make-instance 'module :name "Ai testcases")
-                 (make-instance 'module :name "updateAllPieces"))
+                 (make-instance 'module :name "updateAllPieces")
+                 (make-instance 'module :name "allmovelist"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")

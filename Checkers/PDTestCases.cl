@@ -13,9 +13,9 @@
 (updateAllPieces *theBoard*)
 (displayboard *theBoard*)
 
-(setq movelist ()) 
-(setq movelist (append movelist (list '(1 2))))
-(setq movelist (append movelist (list '(3 4))))
+(setf movelist ()) 
+(setf movelist (append movelist (list '(1 2))))
+(setf movelist (append movelist (list '(3 4))))
 (updateBoard (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)) *theBoard* movelist)
 (updateAllPieces *theBoard*)
 (displayboard *theBoard*)
