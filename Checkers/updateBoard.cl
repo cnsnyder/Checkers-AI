@@ -6,12 +6,18 @@
     (let ((prevCol (nth 1 (nth x movelist))) (prevRow (nth 0 (nth x movelist))) (curCol (nth 1 (nth (+ x 1) movelist))) (curRow (nth 0 (nth (+ x 1) movelist))))
       (if (= (+ (abs (- prevCol curCol)) (abs (- prevRow curRow))) 4) ;;checking for jump 4 = jump, 2 = no jump
           (let ((killCol (/ (+ prevCol curCol) 2)) (killRow (/ (+ prevRow curRow) 2)))
-            (setf (nth killCol (nth killRow theBoard)) nil) ;;clears that location!!
+            (setf (nth killCol (nth killRow theBoard)) nil) ;;clears that location!!(defun make-king (piece)
+            (setf (slot-value peice 'isKing) T))
             )
         )
-      )
-    )
+      )  
+  ;;Checks if a piece has moved to the end of the board and if so kings it
+  (let ((landingRow (car (car (last moveList)))))
+    (if (or (= landingRow 0) (= landingRow 7)) (make-king piece)))
   )
 
-            
-    
+(defun make-king (piece)
+  (setf (slot-value piece 'isKing) T))
+  
+      
+  
