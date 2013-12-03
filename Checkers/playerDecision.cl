@@ -1,6 +1,6 @@
-(defun playerDecision ()
+(defun playerDecision (*theBoard*)
   
-  (displayBoard)
+  (displayBoard *theBoard*)
   (let ((validPiece ()) (validMove ()) (row ()) (col ()) (piece ()) (mymovelist ()))
     
     (loop while (not (eql validPiece t)) do
@@ -112,13 +112,3 @@
   ;; (nth killCol (nth killRow theBoard)) nil) 
   ;; (slot-value thePiece 'owner)
   ;;Psuedo code
-  ;;Print board
-  ;;ask location of piece the user would like to move
-  ;;save piece as variable playedPiece if a valid piece loop until valid piece
-  ;;set ValidChoice boolean to false
-  ;;while not a valid choice:
-  ;;;;;;ask for move decision and check validity against piece movelist
-  ;;;;;;if decision not valid
-  ;;;;;;;;;print "choice not valid, choose again"
-  ;;append choice to movelist (which will be returned)
-  
