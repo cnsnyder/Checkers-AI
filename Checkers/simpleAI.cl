@@ -1,7 +1,11 @@
-;;; Simple AI takes in a movelist and returns a single move
-;;; selected at at random
+;;; Simple AI takes in a board and updates the board with a random move
 
-(defun simple-ai (moveList)
-  (let ((rand (random (length movelist))))
-    (nth rand moveList)))
+(defun simple-ai (board)
+  (let* ((aiColor 1)
+         (movelist (allmoves aiColor board))
+         (randomMove (nth (random (length movelist)) moveList))
+         (piece (boardItemAt board (car randomMove))))
+    (print randomMove)
+    (print moveList)
+    (updateBoard piece board randomMove)))
   
