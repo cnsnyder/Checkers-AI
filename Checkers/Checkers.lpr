@@ -20,7 +20,12 @@
                  (make-instance 'module :name "Ai current")
                  (make-instance 'module :name "Ai testcases")
                  (make-instance 'module :name "updateAllPieces")
-                 (make-instance 'module :name "allmovelist"))
+                 (make-instance 'module :name "allmovelist")
+                 (make-instance 'module :name "playerDecision")
+                 (make-instance 'module :name "isVictor")
+                 (make-instance 'module :name "score")
+                 (make-instance 'module :name "boardItemAt")
+                 (make-instance 'module :name "makekings"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")
