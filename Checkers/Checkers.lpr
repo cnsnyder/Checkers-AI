@@ -1,34 +1,25 @@
-;; -*- lisp-version: "9.0 [Windows] (Dec 2, 2013 21:58)"; cg: "9.0"; -*-
+;; -*- lisp-version: "9.0 [Windows] (Dec 2, 2013 19:03)"; cg: "9.0"; -*-
 
 (in-package :cg-user)
 
 (define-project :name :|Checkers|
-  :modules (list (make-instance 'module :name "main")
-                 (make-instance 'module :name "initializeBoard")
-                 (make-instance 'module :name "mover gaben")
-                 (make-instance 'module :name "the mover")
-                 (make-instance 'module :name "testcase1")
-                 (make-instance 'module :name "updateBoard")
-                 (make-instance 'module :name "new mover")
-                 (make-instance 'module :name "test cases for move")
-                 (make-instance 'module :name "displayBoard")
-                 (make-instance 'module :name "new piece class")
-                 (make-instance 'module :name "Changes notes")
-                 (make-instance 'module :name "move testcases")
-                 (make-instance 'module :name "setupgame")
-                 (make-instance 'module :name "hahahahah")
-                 (make-instance 'module :name "Ai current")
-                 (make-instance 'module :name "Ai testcases")
-                 (make-instance 'module :name "updateAllPieces")
+  :modules (list (make-instance 'module :name "GeneralFunctions")
                  (make-instance 'module :name "allmovelist")
-                 (make-instance 'module :name "playerDecision")
-                 (make-instance 'module :name "isVictor")
-                 (make-instance 'module :name "score")
+                 (make-instance 'module :name "updateAllPieces")
                  (make-instance 'module :name "boardItemAt")
-                 (make-instance 'module :name "makekings"))
+                 (make-instance 'module :name "displayBoard")
+                 (make-instance 'module :name "initializeBoard")
+                 (make-instance 'module :name "isVictor")
+                 (make-instance 'module :name "mainGameLoop")
+                 (make-instance 'module :name "playerDecision")
+                 (make-instance 'module :name "setupgame")
+                 (make-instance 'module :name "simpleAI")
+                 (make-instance 'module :name "updateBoard")
+                 (make-instance 'module :name "makekings")
+                 (make-instance 'module :name "new piece class"))
   :projects nil
   :libraries nil
-  :editable-files (list "pseudo for mover.txt")
+  :editable-files nil
   :distributed-files nil
   :internally-loaded-files nil
   :project-package-name :common-graphics-user
@@ -93,7 +84,7 @@
   :build-number 0
   :run-with-console nil
   :project-file-version-info nil
-  :on-initialization 'default-init-function
+  :on-initialization 'maingameloop
   :default-error-handler-for-delivery 'report-unexpected-error-and-exit
   :on-restart 'do-default-restart)
 
