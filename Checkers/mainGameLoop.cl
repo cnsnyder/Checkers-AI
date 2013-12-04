@@ -15,6 +15,7 @@
           ;;grab piece from first location in movelist since playerDecision does not return it
           (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
           (UpdateBoard piece *theBoard* movelist) ;Update the board to get it ready for next player turn
+          (updateAllPieces *theBoard*)
           (setf playerJustWent t)
           )
       )
@@ -25,6 +26,7 @@
           ;;(setf movelist (aiDecision))
           ;;(setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
           ;;(UpdateBoard piece movelist) ;Update the board to get it ready for next player turn
+          ;;(updateAllPieces *theBoard*)
           (setf aiJustWent t)
           )
       )
@@ -52,6 +54,7 @@
                ;;grab piece from first location in movelist since playerDecision does not return it
                  (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
                  (updateBoard piece *theBoard* movelist)  
+                 (updateAllPieces *theBoard*)
                  )
                 ((and (eql isThereWinner nil) (eql playerJustWent t))
                  (print "It is now the AI's turn")
@@ -60,6 +63,7 @@
                  (aiDecision)
                  (setf movelist (aiDecision))
                  (updateBoard piece *theBoard* movelist)
+                 (updateAllPieces *theBoard*)
                  
                  )
                 )
