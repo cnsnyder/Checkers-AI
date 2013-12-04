@@ -1,3 +1,4 @@
+;;TODO: IF THERE IS A JUMP REMOVE ALL NON JUMPS
 (defun allmoves (owner theBoard)
   (let ((allmovelist ()))
     (dotimes (r 8)
