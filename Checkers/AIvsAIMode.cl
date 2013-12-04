@@ -12,12 +12,7 @@
         (progn
           (print "AI 1 goes first!")
           (if (= ai1Level 1)
-              (progn
-                (setf allPossibleMoves (allmoves 0 *theBoard*))
-                (setf movelist (simpleAI allPossibleMoves))))
-          (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
-          (UpdateBoard piece *theBoard* movelist) ;Update the board to get it ready for next player turn
-          (updateAllPieces *theBoard*)
+              (simple-ai *theBoard* 0))
           (displayBoard *theBoard*)
           (sleep 2)
           (setf ai1JustWent t)
@@ -28,12 +23,7 @@
         (progn
           (print "AI 2 goes first!")
           (if (= ai2Level 1)
-              (progn
-                (setf allPossibleMoves (allmoves 1 *theBoard*))
-                (setf movelist (simpleAI allPossibleMoves))))
-          (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
-          (UpdateBoard piece *theBoard* movelist) ;Update the board to get it ready for next player turn
-          (updateAllPieces *theBoard*)
+              (simple-ai *theBoard* 1))
           (displayBoard *theBoard*)
           (sleep 2)
           (setf ai2JustWent t)
@@ -59,31 +49,21 @@
           (cond ((and (eql isThereWinner nil) (eql ai1JustWent t))
                       
                  (print "It is now AI 2's turn")
-                 (setf ai1JustWent nil)
-                 (setf ai2JustWent t)
                  (if (= ai2Level 1)
-                     (progn
-                       (setf allPossibleMoves (allmoves 1 *theBoard*))
-                       (setf movelist (simpleAI allPossibleMoves))))
-               ;;grab piece from first location in movelist since playerDecision does not return it
-                 (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
-                 (updateBoard piece *theBoard* movelist)  
-                 (updateAllPieces *theBoard*)
+                     (simple-ai *theBoard* 1))  
                  (displayBoard *theBoard*)
                  (sleep 2)
+                 (setf ai1JustWent nil)
+                 (setf ai2JustWent t)
                  )
                 ((and (eql isThereWinner nil) (eql ai2JustWent t))
                  (print "It is now AI 1's turn")
-                 (setf ai2JustWent nil)
-                 (setf ai1JustWent t)
                  (if (= ai1Level 1)
-                     (progn
-                       (setf allPossibleMoves (allmoves 0 *theBoard*))
-                       (setf movelist (simpleAI allPossibleMoves))))
-                 (updateBoard piece *theBoard* movelist)
-                 (updateAllPieces *theBoard*)
+                     (simple-ai *theBoard* 0))
                  (displayBoard *theBoard*)
                  (sleep 2)
+                 (setf ai2JustWent nil)
+                 (setf ai1JustWent t)
                  
                  )
                 )

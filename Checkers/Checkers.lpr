@@ -16,7 +16,9 @@
                  (make-instance 'module :name "simpleAI")
                  (make-instance 'module :name "updateBoard")
                  (make-instance 'module :name "makekings")
-                 (make-instance 'module :name "new piece class"))
+                 (make-instance 'module :name "new piece class")
+                 (make-instance 'module :name "testAllMovesList")
+                 (make-instance 'module :name "AIvsAIMode"))
   :projects nil
   :libraries nil
   :editable-files nil
@@ -84,7 +86,7 @@
   :build-number 0
   :run-with-console nil
   :project-file-version-info nil
-  :on-initialization 'maingameloop
+  :on-initialization 'aivsaimode
   :default-error-handler-for-delivery 'report-unexpected-error-and-exit
   :on-restart 'do-default-restart)
 
