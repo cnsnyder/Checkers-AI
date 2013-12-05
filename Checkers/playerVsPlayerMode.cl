@@ -12,7 +12,9 @@
           (setf movelist (playerDecisionPVP *theBoard* x)) 
           ;;grab piece from first location in movelist since playerDecision does not return it
           (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
+          
           (UpdateBoard piece *theBoard* movelist) ;Update the board to get it ready for next player turn
+          (updateAllPieces *theBoard*)
           (setf playerJustWent t)
 
           )
@@ -25,6 +27,7 @@
           ;;grab piece from first location in movelist since playerDecision does not return it
           (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
           (UpdateBoard piece *theBoard* movelist) ;Update the board to get it ready for next player turn
+          (updateAllPieces *theBoard*)
           (setf player2JustWent t)
 
           )
@@ -57,7 +60,8 @@
                    (setf movelist (playerDecisionPVP *theBoard* 0))
                ;;grab piece from first location in movelist since playerDecision does not return it
                (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
-               (updateBoard piece *theBoard* movelist)  
+               (updateBoard piece *theBoard* movelist) 
+               (updateAllPieces *theBoard*)
                    )
                ((and (eql isThereWinner nil) (eql playerJustWent t))
                  (print "It is now Player two's turn")
@@ -66,6 +70,7 @@
                  (setf movelist (playerDecisionPVP *theBoard* 1))
                  (setf piece (nth (nth 1 (nth 0 movelist)) (nth (nth 0 (nth 0 movelist)) *theBoard*)))
                  (updateBoard piece *theBoard* movelist)
+                 (updateAllPieces *theBoard*)
                  
                  )
               )

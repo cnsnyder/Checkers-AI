@@ -3,6 +3,8 @@
   (setf validInputChoicePVAI nil)
   (setf validInputChoiceAIVAIPlayer1 nil)
   (setf validInputChoiceAIVAIPlayer2 nil)
+  (setf ai1Level nil)
+  (setf ai2Level nil)
   (loop while (eql validInputMode nil) do
         (print "Welcome to Checkers 2: Electric Boogaloo")
         (print "Choose a game mode!")
@@ -71,7 +73,7 @@
                     (if (= aiChoice1 1)
                         (progn
                           (setf validInputChoiceAIVAIPlayer1 t)
-                          ;;call easy ai
+                          (setf ai1Level 1)
                           
                         ))
                     (if (= aiChoice1 2)
@@ -88,7 +90,7 @@
                     (if (= aiChoice2 1)
                         (progn
                         (setf validInputChoiceAIVAIPlayer2 t)
-                        ;;call easy ai
+                        (setf ai2Level 1)
                         ))
                     (if (= aiChoice2 2)
                         (progn
@@ -102,7 +104,9 @@
                           ))
                     (if (and (eql validInputChoiceAIVAIPlayer1 nil) (eql validInputChoiceAIVAIPlayer2 nil))
                            (print "Invalid input, try again")                           
+                      (AIvsAIMode ai1level ai2level)
                       )
+                    
                     )))
           
           (if (eql validInputMode nil)
