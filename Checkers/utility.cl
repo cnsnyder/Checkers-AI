@@ -1,7 +1,7 @@
 (defun utility (owner theBoard theMovelist)
   (let ((A (score owner theBoard)) (B 0))
     (setf copyboard (copy-list theBoard))
-    (updateboard (boarditemat (nth 0 theMovelist)) theBoard theMovelist)
+    (updateboard (boarditemat theBoard (nth 0 theMovelist)) theBoard theMovelist)
     (setf B (score owner theBoard))
     (setf theBoard copyBoard)
     (- B A)

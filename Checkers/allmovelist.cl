@@ -1,4 +1,5 @@
 (defun allmoves (owner theBoard)
+  (updateallpieces theBoard)
   (let ((movelist ())
         (jumplist ()))
     (dotimes (r 8)

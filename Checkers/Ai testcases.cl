@@ -1,5 +1,5 @@
 (setupgame)
 (displayboard *theBoard*)
-(setf *theMovelist* (aiDecision *theBoard* 2))
+(setf *theMovelist* (aiDecision *theBoard* 0 0))
 (updateboard (nth (nth 1 (nth 0 *theMovelist*)) (nth (nth 0 (nth 0 *theMovelist*)) *theBoard*)) *theBoard* *theMovelist*)
 (displayboard *theBoard*)
