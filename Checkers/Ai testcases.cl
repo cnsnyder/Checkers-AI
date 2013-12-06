@@ -13,8 +13,7 @@
       (progn 
         (print "Player 1 turn!")
         (displayboard *theBoard*)
-        (setf *theMovelist* (aiDecision *theBoard* 0 0))
-        (print *themovelist*)
+        (setf *theMovelist* (simple-ai *theBoard* 0))
         (if (equal *theMovelist* '(((7 7) (0 0))))
             (print "Player 2 won!!")
           (progn
@@ -23,7 +22,7 @@
           )
         (print "Player 2 turn!")
         (displayboard *theBoard*)
-        (setf *theMovelist* (aiDecision *theBoard* 1 2))
+        (setf *theMovelist* (aidecision *theboard* 1 2))
         (if (equal *theMovelist* '(((7 7) (0 0))))
             (print "Player 1 won!!")
           (progn
@@ -31,7 +30,7 @@
             )
           )
         )
-      )
+        )
 (if (= 0 (isvictor))
     (print "Player 1 Won!!")
   (print "Player 2 Won!!")
