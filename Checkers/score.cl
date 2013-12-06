@@ -9,9 +9,9 @@
                       (setf ownerscore (+ ownerscore kingvalue))
                     (setf ownerscore (+ ownerscore piecevalue)))
                 (if (slot-value p 'isKing)     ;;subtract for pieces not owned by the provided owner
-                      (setf ownerscore (- ownerscore kingvalue))
-                    (setf ownerscore (- ownerscore piecevalue)))
-                  )
+                    (setf ownerscore (- ownerscore kingvalue))
+                  (setf ownerscore (- ownerscore piecevalue)))
+                )
             )
           )
         )

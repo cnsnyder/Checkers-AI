@@ -1,4 +1,5 @@
 (defun mainMenu()
+  (setupgame)
   (setf validInputMode nil)
   (setf validInputChoicePVAI nil)
   (setf validInputChoiceAIVAIPlayer1 nil)
@@ -31,10 +32,10 @@
                           (setf validInputChoicePVAI t)
                           ))
                     (if (= aiChoice 2)
-                          (progn
-                            (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 0))))
-                            (setf validInputChoicePVAI t)
-                            ))
+                        (progn
+                          (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 0))))
+                          (setf validInputChoicePVAI t)
+                          ))
                     (if (= aiChoice 3)
                         (progn
                           (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 2))))
@@ -89,33 +90,32 @@
                     
                     (if (= aiChoice2 1)
                         (progn
-                        (setf validInputChoiceAIVAIPlayer2 t)
-                        (setf *entitylist* (append *entitylist* (list '(simple-ai *theBoard* 1))))
-                        ))
+                          (setf validInputChoiceAIVAIPlayer2 t)
+                          (setf *entitylist* (append *entitylist* (list '(simple-ai *theBoard* 1))))
+                          ))
                     (if (= aiChoice2 2)
                         (progn
-                        (setf validInputChoiceAIVAIPlayer2 t)
-                        (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 0))))
-                        ))
+                          (setf validInputChoiceAIVAIPlayer2 t)
+                          (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 0))))
+                          ))
                     (if (= aiChoice2 3)
                         (progn
-                        (setf validInputChoiceAIVAIPlayer2 t)
-                        (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 2))))
+                          (setf validInputChoiceAIVAIPlayer2 t)
+                          (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 2))))
                           ))
                     (if (and (eql validInputChoiceAIVAIPlayer1 nil) (eql validInputChoiceAIVAIPlayer2 nil))
                         (print "Invalid input, try again")
                       (progn
                         (print *entitylist*)
-                        (AIvsAIMode ai1level ai2level)
+                        (AIvsAIMode *entitylist*)
                         )
                       )
                     
                     )))
-          
-          (if (eql validInputMode nil)
-              (print "Invalid input, try again")
-            )
-          
+        
+        (if (eql validInputMode nil)
+            (print "Invalid input, try again")
           )
+        
         )
-  
+  )
