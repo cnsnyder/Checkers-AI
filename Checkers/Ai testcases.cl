@@ -15,7 +15,7 @@
         (displayboard *theBoard*)
         (setf *theMovelist* (aiDecision *theBoard* 0 0))
         (print *themovelist*)
-        (if (equal *theMovelist* '(((0 0) (7 7))))
+        (if (equal *theMovelist* '(((7 7) (0 0))))
             (print "Player 2 won!!")
           (progn
             (updateboard (nth (nth 1 (nth 0 *theMovelist*)) (nth (nth 0 (nth 0 *theMovelist*)) *theBoard*)) *theBoard* *theMovelist*)
@@ -25,7 +25,7 @@
         (displayboard *theBoard*)
         (setf *theMovelist* (aiDecision *theBoard* 1 2))
         (print *themovelist*)
-        (if (equal *theMovelist* '(((0 0) (7 7))))
+        (if (equal *theMovelist* '(((7 7) (0 0))))
             (print "Player 1 won!!")
           (progn
             (updateboard (nth (nth 1 (nth 0 *theMovelist*)) (nth (nth 0 (nth 0 *theMovelist*)) *theBoard*)) *theBoard* *theMovelist*)
