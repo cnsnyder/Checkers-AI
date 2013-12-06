@@ -28,7 +28,9 @@
                  (make-instance 'module :name "allmovelist")
                  (make-instance 'module :name "boardItemAt")
                  (make-instance 'module :name "GeneralFunctions")
-                 (make-instance 'module :name "mainMenu"))
+                 (make-instance 'module :name "mainMenu")
+                 (make-instance 'module :name "copyboard")
+                 (make-instance 'module :name "copyboardTestCase"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")
