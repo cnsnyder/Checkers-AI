@@ -43,9 +43,9 @@
           ;;(print mymovelist)
           ;;(print (append (list mymovelist) (list (append row col)))) 
           ;;(print (slot-value piece 'movelist))
-                  (if (not (eq (find (append (list mymovelist) (list (append row col))) (slot-value piece 'movelist) :test #'equal) nil))  ;; if move is located in movelist
-                      (progn ;;if move is found
-                        (setf validMove t)
+                  (if (not (eq (find (append (list mymovelist) (list (append row col))) (allmoves (slot-value piece 'owner) *theBoard*) :test #'equal) nil))  ;; if move is located in movelist
+                      (progn ;;if move is found  
+                      (setf validMove t)
                         (setf mymovelist (append (list mymovelist) (list (append row col))))
                         )
                     (progn ;;if move not found
