@@ -65,7 +65,7 @@
                             (print "Enter the row and column of where you would like to jump the piece")
                             (setf jrow (list (read)))
                             (setf jcol (list (read)))
-                            (if (not (eq (find (append (list mymovelist) (list (append row col)) (list (append jrow jcol))) (slot-value piece 'movelist) :test #'equal) nil))
+                            (if (not (eq (find (append (list mymovelist) (list (append row col)) (list (append jrow jcol))) (allmoves (slot-value piece 'owner) *theBoard*) :test #'equal) nil))
                                 (progn
                                   (setf validMove t)
                                   (setf mymovelist (append (list mymovelist) (list (append row col)) (list (append jrow jcol))))
