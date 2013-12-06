@@ -5,7 +5,8 @@
   (let* ((movelist (allmoves aiColor board))
          (randomMove (nth (random (length movelist)) moveList))
          (piece (boardItemAt board (car randomMove))))
-    (updateBoard piece board randomMove)
-    (updateAllPieces board))
+    randomMove
+    )
+  
   )
   
