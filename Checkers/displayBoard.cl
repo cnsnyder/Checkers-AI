@@ -1,7 +1,9 @@
 (defun displayBoard (theBoard) 
-  (print "  0 1 2 3 4 5 6 7")
+
+  (print '(0 1 2 3 4 5 6 7))
   (dotimes (r 8)
-    (let ((row (list r)))
+    (let ((row ()))
+      (setf row (append row r))
       (dotimes (c 8)
         (if (= (mod r 2) (mod c 2)) ;;if non-playable space
             (setf row (append row (list '*)))  ;;adds black-block character to represent black not playable areas

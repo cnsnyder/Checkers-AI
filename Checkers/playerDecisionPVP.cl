@@ -1,6 +1,6 @@
 (defun playerDecisionPVP(*theBoard* currentPlayer)
   
-  (displayBoard *theBoard*)
+  ;;(displayBoard *theBoard*)
   (let ((validPiece ()) (validMove ()) (row ()) (col ()) (piece ()) (mymovelist ()) (choice nil))
     (loop do
           
