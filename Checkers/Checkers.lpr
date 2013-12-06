@@ -1,4 +1,4 @@
-;; -*- lisp-version: "9.0 [Windows] (Nov 26, 2013 16:04)"; cg: "9.0"; -*-
+;; -*- lisp-version: "9.0 [Windows] (Dec 2, 2013 21:58)"; cg: "9.0"; -*-
 
 (in-package :cg-user)
 
@@ -28,7 +28,10 @@
                  (make-instance 'module :name "allmovelist")
                  (make-instance 'module :name "boardItemAt")
                  (make-instance 'module :name "GeneralFunctions")
-                 (make-instance 'module :name "mainMenu"))
+                 (make-instance 'module :name "mainMenu")
+                 (make-instance 'module :name "utility")
+                 (make-instance 'module :name "allAiFunctions")
+                 (make-instance 'module :name "copyboard"))
   :projects nil
   :libraries nil
   :editable-files (list "pseudo for mover.txt")
