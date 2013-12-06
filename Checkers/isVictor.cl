@@ -1,4 +1,4 @@
-(defun isVictor()
+(defun isVictor(currentPlayer)
   ;;iterate through board and count the owners, if one side of board has no pieces
   ;;then that side lost
 
@@ -20,6 +20,14 @@
           )
         )
       )
+    (setf movelist (allmoves currentPlayer *theBoard*))
+    (if (eql movelist nil)
+        (progn
+          (if (eql currentPlayer 0)
+              (setf winner 1))
+          (if (eql currentPlayer 1)
+              (setf winner 0))))
+    
     (if (= owner1PiecesCount 0)
         (setf winner 1))
     (if (= owner2PiecesCount 0)
