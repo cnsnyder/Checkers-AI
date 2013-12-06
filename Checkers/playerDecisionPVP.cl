@@ -63,6 +63,11 @@
                                   (loop-finish)
                                   )
                               )
+                            (if (eq choice 'A)
+                                (progn
+                                  (setf mymovelist (append (list mymovelist) (list (append (list row col)))))
+                                  )
+                            )
                             )
                           )
                         (loop while (and (eq choice 'A) (< jumpCount 9)) do 
@@ -73,23 +78,32 @@
                                   (print jumpCount)
                                   (print "If you exceed 9 jumps, you movelist will be restarted")
                                   (displayBoard *theBoard*)
+                                  ;;(setf mymovelist (append (list mymovelist) (list (append (list row col)))))
                                   (print "Your current movelist:")
                                   (print mymovelist)
                                   (print "Enter the row and column of where you would like to jump the piece")
-                                  (setf jrow (list (read)))
-                                  (setf jcol (list (read)))
-                                      (if (not (eq (find (append (list mymovelist) (list (append row col)) (list (append jrow jcol))) (slot-value piece 'movelist) :test #'equal) nil))
+                                  (setf jrow (read))
+                                  (setf jcol (read))
+                                  ;;(print (append  mymovelist (list (append (list jrow jcol)))))
+                                  ;;(print (allmoves (slot-value piece 'owner) *theBoard*))
+                                      (if (not (eq (find (append mymovelist (list (append (list jrow jcol)))) (allmoves (slot-value piece 'owner) *theBoard*) :test #'equal) nil))
                                           (progn
                                             (setf validMove t)
-                                            (setf mymovelist (append (list mymovelist) (list (append row col)) (list (append jrow jcol))))
+                                            (setf mymovelist (append mymovelist (list (append (list jrow jcol)))))
                                             (setf choice nil)
+                                            ;;(print mymovelist)
                                             )
                                         (progn
+                                          (print "Your current movelist:")
+                                 	  (print mymovelist)
                                           (print "This is not a valid move. (A)dd a jump or (S)tart move from beginning")
                                           (setf choice (read))
                                           (if (eq choice 'A)
-                                              (setf mymovelist (append (list mymovelist) (list (append row col)) (list (append jrow jcol))))
-                                            (progn
+                                              (progn
+                                              ;;(setf mymovelist (append (list mymovelist) (list (append (list jrow jcol)))))
+                                                ;;(print mymovelist)
+                                                )
+                                                (progn
                                               (loop-finish)
                                               )
                                             )
@@ -104,14 +118,16 @@
                     
                   
                   )          
-                  
+            
             )
         while (not (eql choice nil)))
-    (print mymovelist)
+    
+        
+    ;;(print mymovelist)
     (setf mymovelist mymovelist) ;; return move list
     )
-  
   )
+  
 
     
     
