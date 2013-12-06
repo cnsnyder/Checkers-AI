@@ -16,6 +16,7 @@
         (if (= choice 1)
             (progn
               (setf validInputMode t)
+              (setf *entitylist* (append *entitylist* (list '(playerDecisionPVP *theBoard* 0))))
               (loop while (eql validInputChoicePVAI nil) do
                     
                     (print "You have selected Player vs. AI")
@@ -26,17 +27,17 @@
                     (setf aiChoice (read))
                     (if (= aiChoice 1)
                         (progn
-                          ;;call easy ai
+                          (setf *entitylist* (append *entitylist* (list '(simple-ai *theBoard* 1))))
                           (setf validInputChoicePVAI t)
                           ))
                     (if (= aiChoice 2)
                           (progn
-                            ;;call normal ai
+                            (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 0))))
                             (setf validInputChoicePVAI t)
                             ))
                     (if (= aiChoice 3)
                         (progn
-                          ;;call hard ai
+                          (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 2))))
                           (setf validInputChoicePVAI t)
                           ))
                     
@@ -73,38 +74,40 @@
                     (if (= aiChoice1 1)
                         (progn
                           (setf validInputChoiceAIVAIPlayer1 t)
-                          (setf ai1Level 1)
-                          
-                        ))
+                          (setf *entitylist* (append *entitylist* (list '(simple-ai *theBoard* 0))))
+                          ))
                     (if (= aiChoice1 2)
                         (progn
                           (setf validInputChoiceAIVAIPlayer1 t)
-                        ;;call normal ai
-                        ))
+                          (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 0 0))))
+                          ))
                     (if (= aiChoice1 3)
                         (progn
-                        (setf validInputChoiceAIVAIPlayer1 t)
-                        ;;call hard ai
-                        ))
+                          (setf validInputChoiceAIVAIPlayer1 t)
+                          (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 0 2))))
+                          ))
                     
                     (if (= aiChoice2 1)
                         (progn
                         (setf validInputChoiceAIVAIPlayer2 t)
-                        (setf ai2Level 1)
+                        (setf *entitylist* (append *entitylist* (list '(simple-ai *theBoard* 1))))
                         ))
                     (if (= aiChoice2 2)
                         (progn
                         (setf validInputChoiceAIVAIPlayer2 t)
-                        ;;call normal ai
+                        (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 0))))
                         ))
                     (if (= aiChoice2 3)
                         (progn
                         (setf validInputChoiceAIVAIPlayer2 t)
-                        ;;call hard ai
+                        (setf *entitylist* (append *entitylist* (list '(aiDecision *theBoard* 1 2))))
                           ))
                     (if (and (eql validInputChoiceAIVAIPlayer1 nil) (eql validInputChoiceAIVAIPlayer2 nil))
-                           (print "Invalid input, try again")                           
-                      (AIvsAIMode ai1level ai2level)
+                        (print "Invalid input, try again")
+                      (progn
+                        (print *entitylist*)
+                        (AIvsAIMode ai1level ai2level)
+                        )
                       )
                     
                     )))
