@@ -9,6 +9,7 @@
 
 ;;Gabe's loop to try to test full game. Does not work all the way.  
 (setupgame)
+
 (let ((count 0) (victor ()))
   (loop while (eql victor nil) do
         (progn 

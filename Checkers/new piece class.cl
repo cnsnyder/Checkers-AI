@@ -1,4 +1,4 @@
-(defclass piece ()
+(defclass piece () ;;this is the class for all pieces in the game
   (
    (owner :initarg :owner :initform -1)
    (location :initarg :location :initform '(-1 -1))
@@ -8,7 +8,7 @@
    )
   )
 
-(defmethod genMoveListR ((thePiece piece) theBoard theMovelist)
+(defmethod genMoveListR ((thePiece piece) theBoard theMovelist) ;;this method updates the given pieces move list with valid moves for the given board state.
   (let ((hasJumped nil) (validlist '(nil nil nil nil)) (jumpCounter 0))
   (if (>= (length theMovelist) 2) 
       (setf hasjumped t)

@@ -1,4 +1,4 @@
-(defun displayBoard (theBoard)
+(defun displayBoard (theBoard) ;;this function is used to create a visual represention of the board that has been passed
   (print "    0 1 2 3 4 5 6 7  ")
   (dotimes (r 8)
     (let ((row (make-array 0 :element-type 'character :adjustable t :fill-pointer 0)))

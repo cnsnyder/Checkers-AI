@@ -1,4 +1,4 @@
-(defun updateAllPieces (theBoard)
+(defun updateAllPieces (theBoard) ;;this function both clears and calls genmovelistR for each pieces movelist
  ;;Generates a move list for all pieces on board
   (dotimes (r 8)
     (dotimes (c 8)

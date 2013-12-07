@@ -1,4 +1,4 @@
-(defun score (owner theBoard)
+(defun score (owner theBoard) ;; this function provides a valuation of the current board state for the given owner
   (let ((ownerscore 0) (kingvalue 1.5) (piecevalue 1)) ;;allow for weightings of pieces to be changed
     (dotimes (r 8)
       (dotimes (c 8)

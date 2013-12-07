@@ -1,4 +1,4 @@
-(defun makekings (theBoard)
+(defun makekings (theBoard) ;;Where once there were only peasants now there are kings (basically this changes pieces to kings)
   (dotimes (x 2)
     (dotimes (c 8)
       (let ((p (boarditemat theboard (list (* 7 x) c))))
