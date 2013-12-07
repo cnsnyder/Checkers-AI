@@ -8,7 +8,6 @@
                  (make-instance 'module :name "displayBoard")
                  (make-instance 'module :name "new piece class")
                  (make-instance 'module :name "setupgame")
-                 (make-instance 'module :name "Ai testcases")
                  (make-instance 'module :name "updateAllPieces")
                  (make-instance 'module :name "isVictor")
                  (make-instance 'module :name "makekings")
