@@ -21,7 +21,7 @@
         )
       )
     
-    (if (eql currentPlayer nil)
+    (if (not (eql currentPlayer nil))
         (progn 
           (setf movelist (allmoves currentPlayer *theBoard*))
           (if (eql movelist nil)
