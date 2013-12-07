@@ -1,4 +1,4 @@
-(defun playerDecision (*theBoard*)
+(defun playerDecision (*theBoard*) ;;this function takes in user input and validates then returns the validated move list to be used in the main game loop.
   
   (displayBoard *theBoard*)
   (let ((validPiece ()) (validMove ()) (row ()) (col ()) (piece ()) (mymovelist ()))

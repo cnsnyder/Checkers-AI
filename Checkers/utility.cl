@@ -1,4 +1,4 @@
-(defun utility (owner theBoard theMovelist)
+(defun utility (owner theBoard theMovelist) ;;the function returns the difference of the score of one board state vs the suggested move.
   (if (equal themovelist '(((0 0) (7 7)))) ;;this means given owner won
       999
     (if (equal themovelist '(((7 7) (0 0)))) ;;this means the given owner lost

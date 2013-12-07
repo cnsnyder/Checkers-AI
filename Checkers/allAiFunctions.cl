@@ -7,7 +7,7 @@
     )
   )
 
-(defun aiMax (theBoard owner level)
+(defun aiMax (theBoard owner level) ;; this function returns the move with the highest utility
   (let ((moveDecision ()) (utilityList ()) (allvalidmoves (allmoves owner theBoard)) (highest -99999))
     (if (> (length allvalidmoves) 0)
         (progn

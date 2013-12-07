@@ -1,4 +1,4 @@
-(defun copyboard (theBoard)
+(defun copyboard (theBoard) ;; this function returns a copy of the given board for use in simulations
   (let ((returnboard ()))
     (dotimes (r 8)
       (setf returnboard (append returnboard (list (copy-list (nth r theboard)))))

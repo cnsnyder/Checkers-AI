@@ -1,4 +1,4 @@
-(defun allmoves (owner theBoard)
+(defun allmoves (owner theBoard) ;;this function returns a list of all moves for the given board state and the owner. It enforces the rule of required jumps by removing any non-jumps provided there are in fact jumps to begin with.
   (updateallpieces theBoard)
   (let ((movelist ())
         (jumplist ()))
