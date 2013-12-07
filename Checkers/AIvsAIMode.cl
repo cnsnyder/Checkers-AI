@@ -1,6 +1,6 @@
 ;;TODO: Test this function! Currently all levels of AI do not work so this hasn't been tested throughly!
 (defun AIvsAIMode(entitylist)
-  ;;(setupGame)
+  (setupGame)
   (setf waitTime 1)
   (setf ai1JustWent nil)
   (setf ai2JustWent nil)
@@ -77,5 +77,3 @@
         )
   
   )
-
-

@@ -1,4 +1,4 @@
-(defun isVictor( &optional currentPlayer)
+(defun isVictor(&optional currentPlayer)
   ;;iterate through board and count the owners, if one side of board has no pieces
   ;;then that side lost
 

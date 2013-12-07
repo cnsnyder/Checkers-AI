@@ -24,7 +24,9 @@
                  (make-instance 'module :name "mainMenu")
                  (make-instance 'module :name "utility")
                  (make-instance 'module :name "allAiFunctions")
-                 (make-instance 'module :name "copyboard"))
+                 (make-instance 'module :name "copyboard")
+                 (make-instance 'module :name "simpleMainMenu")
+                 (make-instance 'module :name "allAICases"))
   :projects nil
   :libraries nil
   :editable-files nil
@@ -92,7 +94,7 @@
   :build-number 0
   :run-with-console nil
   :project-file-version-info nil
-  :on-initialization 'default-init-function
+  :on-initialization 'simplemainmenu
   :default-error-handler-for-delivery 'report-unexpected-error-and-exit
   :on-restart 'do-default-restart)
 

@@ -99,7 +99,7 @@
           (incf count)
           (print "Player 1 turn!")
           (displayboard *theBoard*)
-          (setf *theMovelist* (aiDecision *theBoard* 0 2))
+          (setf *theMovelist* (aiDecision *theBoard* 0 4))
           (setf victor (isVictor 0))
           (if (equal *theMovelist* '(((7 7) (0 0))))
               (print "Player 2 won!!")
@@ -111,7 +111,7 @@
               (progn
           (print "Player 2 turn!")
           (displayboard *theBoard*)
-          (setf *theMovelist* (aiDecision *theBoard* 1 2))
+          (setf *theMovelist* (aiDecision *theBoard* 1 4))
           (if (equal *theMovelist* '(((7 7) (0 0))))
               (print "Player 1 won!!")
             (progn
