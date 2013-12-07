@@ -1,4 +1,4 @@
-(defun simpleMainMenu()
+(defun simpleMainMenu() ;; this function handles the display of the main menu to be used for demonstrations of the AI
   (setupgame)
   (setf validInputMode nil)
   (loop while (eql validInputMode nil) do

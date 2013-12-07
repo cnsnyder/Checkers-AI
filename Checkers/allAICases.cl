@@ -88,6 +88,8 @@
   )
 )
 
+;;this file contains all the functions that are used to run the various simulations described in simple mainmenu
+
 (defun  miniMaxVsMiniMax()
 
 (setupgame)
