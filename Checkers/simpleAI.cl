@@ -9,5 +9,6 @@
       )
       '(((7 7) (0 0))) ;;return the sentinal value for AI lost
     )
+    )
   )
   

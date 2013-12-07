@@ -13,7 +13,7 @@
       (progn 
         (print "Player 1 turn!")
         (displayboard *theBoard*)
-        (setf *theMovelist* (simple-ai *theBoard* 0))
+        (setf *theMovelist* (aidecision *theBoard* 0 2))
         (if (equal *theMovelist* '(((7 7) (0 0))))
             (print "Player 2 won!!")
           (progn
