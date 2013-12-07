@@ -15,7 +15,7 @@
           (incf count)
           (print "Player 1 turn!")
           (displayboard *theBoard*)
-          (setf *theMovelist* (aiDecision *theBoard* 0 0))
+          (setf *theMovelist* (simple-ai *theBoard* 0))
           (setf victor (isVictor 0))
           (if (equal *theMovelist* '(((7 7) (0 0))))
               (print "Player 2 won!!")
