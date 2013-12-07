@@ -17,12 +17,12 @@
           (displayboard *theBoard*)
           (setf *theMovelist* (aiDecision *theBoard* 0 0))
           (setf victor (isVictor 0))
-        (if (equal *theMovelist* '(((7 7) (0 0))))
-            (print "Player 2 won!!")
-          (progn
-            (updateboard (nth (nth 1 (nth 0 *theMovelist*)) (nth (nth 0 (nth 0 *theMovelist*)) *theBoard*)) *theBoard* *theMovelist*)
+          (if (equal *theMovelist* '(((7 7) (0 0))))
+              (print "Player 2 won!!")
+            (progn
+              (updateboard (nth (nth 1 (nth 0 *theMovelist*)) (nth (nth 0 (nth 0 *theMovelist*)) *theBoard*)) *theBoard* *theMovelist*)
+              )
             )
-          )
           (print "Player 2 turn!")
           (displayboard *theBoard*)
           (setf *theMovelist* (aiDecision *theBoard* 1 2))
@@ -37,9 +37,12 @@
           (print count)
           )
         )
+  (displayboard *theBoard*)
+  
+  (if (= 0 victor)
+      (print "Player 1 Won!!")
+    (print "Player 2 Won!!")
+    )
   )
-(displayboard *theBoard*)
-(if (= 0 (isvictor 1))
-    (print "Player 1 Won!!")
-  (print "Player 2 Won!!")
-  )
+
+
