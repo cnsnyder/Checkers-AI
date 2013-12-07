@@ -4,7 +4,7 @@
 
   (setf owner1PiecesCount 0)
   (setf owner2PiecesCount 0)
-
+  ;; Shawn's obligatory change
   (let ((winner ()))
     (dotimes (r 8)
       (dotimes (c 8)    
